@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Productos</ion-title>
+    <ion-buttons slot="start">
+      <!-- Botón para volver al Home dinámico -->
+      <ion-button color="light" (click)="goToHome()">
+        <ion-icon name="arrow-back"></ion-icon>
+        Volver al Inicio
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <!-- Botón para cerrar sesión -->
+      <ion-button color="danger" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Lista de productos -->
+  <h2 class="ion-text-center">Lista de Productos</h2>
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+      <ion-label>
+        <h3>{{ product.name }}</h3>
+        <p>ID: {{ product.id }} | Precio: {{ product.price }}</p>
+        <p>Cantidad en Stock Diario: {{ product.stock }}</p> <!-- Actualizado -->
+      </ion-label>
+      <ion-button color="warning" slot="end" (click)="editProduct(product)">
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
+      <ion-button color="danger" slot="end" (click)="deleteProduct(product.id)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Formulario para agregar productos -->
+  <h2 class="ion-text-center">Agregar Producto</h2>
+  <ion-item>
+    <ion-label position="floating">Nombre del Producto</ion-label>
+    <ion-input [(ngModel)]="newProduct.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Precio (ej: $2.500 el kg)</ion-label>
+    <ion-input [(ngModel)]="newProduct.price"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Cantidad en Stock Diario (ej: 100 kg o 300 unidades)</ion-label>
+    <ion-input [(ngModel)]="newProduct.stock"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="addProduct()">
+    <ion-icon slot="start" name="add-circle"></ion-icon>
+    Agregar Producto
+  </ion-button>
+
+  <!-- Formulario para eliminar productos -->
+  <h2 class="ion-text-center">Eliminar Producto</h2>
+  <ion-item>
+    <ion-label position="floating">ID o Nombre del Producto</ion-label>
+    <ion-input [(ngModel)]="deleteInput"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="danger" (click)="deleteProductByNameOrId()">
+    <ion-icon slot="start" name="trash"></ion-icon>
+    Eliminar Producto
+  </ion-button>
+
+  <!-- Formulario para editar productos -->
+  <div *ngIf="editingProduct">
+    <h2 class="ion-text-center">Editar Producto</h2>
+    <ion-item>
+      <ion-label position="floating">Nuevo Nombre</ion-label>
+      <ion-input [(ngModel)]="editingProduct.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nuevo Precio</ion-label>
+      <ion-input [(ngModel)]="editingProduct.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cantidad en Stock Diario (ej: 100 kg o 300 unidades)</ion-label>
+      <ion-input [(ngModel)]="editingProduct.stock"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="success" (click)="saveEdit()">
+      <ion-icon slot="start" name="checkmark"></ion-icon>
+      Guardar Cambios
+    </ion-button>
+    <ion-button expand="block" color="medium" (click)="cancelEdit()">
+      <ion-icon slot="start" name="close"></ion-icon>
+      Cancelar
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,66 @@
+/* Fondo y configuración del contenido */
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-color: #1e1e1e; /* Fondo oscuro para resaltar el formulario */
+}
+
+/* Contenedor principal del formulario de registro */
+.register-form {
+  width: 90%; /* Ancho adaptable al 90% en pantallas pequeñas */
+  max-width: 400px; /* Ancho máximo del formulario en pantallas grandes */
+  padding: 20px; /* Espaciado interno */
+  background-color: #333; /* Fondo oscuro del formulario */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ff0000; /* Borde rojo para resaltar el formulario */
+  margin: 0 auto; /* Centrar el formulario */
+}
+
+/* Espaciado entre elementos del formulario */
+.register-form ion-item {
+  --background: #444;
+  --color: white;
+  margin-bottom: 15px;
+  border-radius: 5px; /* Borde redondeado para los campos de entrada */
+}
+
+/* Contenedor del botón */
+.button-container {
+  margin-top: 20px;
+  text-align: center; /* Centrar el contenido de la sección de botones */
+}
+
+/* Estilos de los mensajes de texto */
+ion-text {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Estilos para el encabezado y la barra de herramientas */
+ion-header, ion-toolbar {
+  --background: #ff0000; /* Color rojo vibrante para la barra superior */
+  --color: white;        /* Blanco para el texto */
+}
+
+/* Responsividad para tabletas y pantallas medianas */
+@media (max-width: 768px) {
+  .register-form {
+    width: 100%; /* Ajuste de ancho para dispositivos más pequeños */
+    padding: 15px;
+  }
+}
+
+/* Responsividad para teléfonos y pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .register-form ion-label {
+    font-size: 1rem; /* Tamaño de fuente reducido en dispositivos muy pequeños */
+  }
+
+  .button-container ion-button {
+    font-size: 0.9rem; /* Tamaño de fuente del botón ajustado */
+  }
+}

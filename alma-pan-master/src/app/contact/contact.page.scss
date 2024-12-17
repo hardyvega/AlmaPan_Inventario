@@ -1,0 +1,58 @@
+/* Fondo de la aplicación */
+ion-content {
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+:root {
+    --alma-pan-red: #ff0000; /* Color rojo personalizado de ALMA PAN */
+}
+
+.contact-form {
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    background-color: #333; /* Fondo blanco semitransparente */
+    border-radius: 10px;
+
+    ion-item {
+        margin-bottom: 15px;
+    }
+
+    ion-button {
+        margin-top: 20px;
+        background-color: var(--alma-pan-red); /* Color rojo personalizado */
+        color: white;
+    }
+}
+
+/* Estilos para el encabezado */
+ion-header, ion-toolbar {
+    --background: var(--alma-pan-red); /* Color rojo para la barra superior */
+    color: white; /* Asegura que el texto sea visible */
+}
+
+/* Media queries para ajustar la responsividad */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    ion-button {
+        font-size: 0.9rem;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    ion-button {
+        font-size: 0.8rem;
+    }
+}

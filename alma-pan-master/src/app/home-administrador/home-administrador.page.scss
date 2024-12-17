@@ -1,0 +1,122 @@
+/* Fondo de la aplicación */
+ion-content {
+    background-image: url('/src/assets/img/logo-almapan.jpeg'); /* Ruta de la imagen del fondo */
+    background-repeat: repeat; /* Repite la imagen en todo el fondo */
+    background-size: cover; /* Ajuste de tamaño para que la imagen cubra todo el fondo */
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Contenedor principal */
+  #container {
+    text-align: center;
+    width: 90%; /* Ajuste del ancho al 90% del contenedor */
+    max-width: 500px; /* Máximo ancho para pantallas grandes */
+    margin: auto;
+    padding: 20px;
+    background-color: #5d5d5d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+  }
+  
+  /* Encabezado y barra de herramientas */
+  ion-header,
+  ion-toolbar {
+    background-color: #ff0000 !important; /* Fuerza el color rojo */
+    color: white;
+  }
+  
+  /* Sección del mapa */
+  .map-section {
+    width: 100%;
+    max-width: 500px;
+    background-color: #333;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+  }
+  
+  .map-title {
+    color: #ff0000;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .map-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
+  }
+  
+  .map-section ion-button {
+    width: 100%;
+    background-color: #ff0000;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  /* Botón de contacto */
+  ion-button {
+    width: 100%;
+    max-width: 400px;
+    margin: 15px auto;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para la imagen de bienvenida */
+  .top-image-section {
+    margin-bottom: 20px;
+  }
+  
+  .top-image {
+    width: 100%;
+    max-width: 400px; /* Ajusta el tamaño máximo según sea necesario */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Media queries para ajustes responsivos */
+  @media (max-width: 768px) {
+    #container {
+      width: 95%;
+      padding: 15px;
+    }
+  
+    .map-title {
+      font-size: 1rem;
+    }
+  
+    ion-button {
+      font-size: 0.9rem;
+      width: 100%; /* Ajuste de ancho en pantallas más pequeñas */
+    }
+  
+    .map-image,
+    .top-image {
+      max-width: 100%; /* Escala las imágenes al tamaño de la pantalla */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #container {
+      padding: 10px;
+    }
+  
+    .map-title {
+      font-size: 0.9rem;
+    }
+  
+    ion-button {
+      font-size: 0.8rem;
+    }
+  }
+  

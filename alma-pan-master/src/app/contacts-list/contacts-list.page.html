@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Contactos</ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón para volver al Home -->
+      <ion-button routerLink="/home" color="primary">Volver al Home</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Solicitudes de Contacto</h2>
+  <ion-list>
+    <ion-item-group *ngFor="let contact of contacts; let i = index">
+      <!-- Cabecera de cada contacto -->
+      <ion-item button detail lines="inset" (click)="toggleDetails(i)">
+        <ion-label>
+          <h3>Solicitud #{{ i + 1 }} - {{ contact.name }}</h3>
+        </ion-label>
+      </ion-item>
+
+      <!-- Detalles desplegables de cada contacto -->
+      <ion-item *ngIf="expandedIndex === i">
+        <ion-label>
+          <p><strong>Negocio:</strong> {{ contact.businessName }}</p>
+          <p><strong>Teléfono:</strong> {{ contact.phone }}</p>
+          <p><strong>Kilos diarios:</strong> {{ contact.kilos }}</p>
+          <p><strong>Ubicación:</strong> {{ contact.location }}</p>
+          <p><strong>Detalles:</strong> {{ contact.details }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

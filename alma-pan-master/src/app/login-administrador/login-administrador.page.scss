@@ -1,0 +1,84 @@
+.login-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+  }
+  
+  .logo-container {
+    margin-bottom: 2rem;
+    
+    .logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  ion-card {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(144, 138, 138, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    
+    ion-card-content {
+      padding: 24px;
+    }
+  }
+  
+  .main-title {
+    color: #ff0000;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    color: #666;
+    margin-bottom: 24px;
+  }
+  
+  .custom-input {
+    
+    --border-color: #ddd;
+    --border-radius: 8px;
+    --border-width: 1px;
+    --padding-start: 16px;
+    margin-bottom: 16px;
+    
+    ion-label {
+      color: #666;
+    }
+  }
+  
+  .login-button {
+    --background: #ff0000;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+    margin: 24px 0;
+    
+    &:hover {
+      --background: #e60000;
+    }
+  }
+  
+  .additional-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    
+    ion-button {
+      --color: #666;
+      font-size: 12px;
+      
+      &:hover {
+        --color: #ff0000;
+      }
+    }
+  }

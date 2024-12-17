@@ -1,0 +1,76 @@
+/* Fondo y configuración principal del contenido */
+ion-content {
+  --background: #1e1e1e; /* Fondo oscuro para toda la pantalla */
+  display: flex; /* Flex para centrar contenido */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+/* Contenedor principal del formulario de login */
+.login-container {
+  display: flex; /* Flex para alinear contenido interno */
+  align-items: center; /* Centra el formulario verticalmente */
+  justify-content: center; /* Centra el formulario horizontalmente */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: 100%; /* Ocupa toda la altura dentro de ion-content */
+}
+
+/* Estilos del formulario de login */
+.login-form {
+  width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+  max-width: 400px; /* Ancho máximo del formulario en pantallas grandes */
+  padding: 20px; /* Espaciado interno para el formulario */
+  background-color: #333; /* Fondo oscuro para el formulario */
+  border-radius: 10px; /* Bordes redondeados para suavizar el diseño */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombras para darle un efecto de elevación */
+
+  /* Contenedor de la imagen superior */
+  .top-image-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  /* Imagen de logo en la parte superior */
+  .top-image {
+    width: 225px; /* Ajuste de ancho para una mejor visibilidad */
+    height: auto; /* Mantener proporción */
+    border-radius: 30px; /* Bordes redondeados */
+    border: 3px solid #ff0000; /* Borde rojo más grueso alrededor del logo */
+  }
+
+  /* Estilos para el texto informativo */
+  .info-text {
+    color: #ccc;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Estilos para cada campo de entrada */
+  ion-item {
+    margin-bottom: 15px; /* Espacio entre los campos */
+  }
+
+  /* Contenedor para los botones de acción */
+  .button-container {
+    display: flex; /* Flex para los botones */
+    flex-direction: column; /* Coloca los botones en columna */
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 20px; /* Espaciado superior para separar los botones de los campos de entrada */
+  }
+
+  /* Estilos para mensajes de éxito o error */
+  ion-text {
+    display: block; /* Mostrar como bloque para alineación */
+    text-align: center; /* Centrar el texto */
+    margin-top: 10px; /* Espacio superior para separar del contenido anterior */
+  }
+}
+
+/* Estilos para el encabezado y barra de herramientas */
+ion-header, ion-toolbar {
+  --background: #ff0000; /* Fondo rojo en el encabezado */
+  color: white; /* Color del texto en blanco para mayor contraste */
+}

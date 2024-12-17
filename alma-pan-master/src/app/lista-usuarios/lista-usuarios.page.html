@@ -1,0 +1,125 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-button class="back-button" (click)="goBackToAdminHome()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Volver</span>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Gestión de Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main-container">
+    <!-- Lista de Usuarios -->
+    <ion-card class="users-list-card">
+      <ion-card-header>
+        <ion-card-title class="section-title">
+          <ion-icon name="people"></ion-icon>
+          Usuarios Registrados
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="user-grid">
+          <ion-card class="user-card" *ngFor="let user of users; let i = index">
+            <div class="user-info">
+              <div class="user-avatar">
+                <ion-icon name="person-circle"></ion-icon>
+              </div>
+              <div class="user-details">
+                <h3>{{ user.fullName }}</h3>
+                <p><ion-icon name="mail"></ion-icon> {{ user.email }}</p>
+              </div>
+            </div>
+            <div class="user-actions">
+              <ion-button class="edit-btn" (click)="editUser(user)">
+                <ion-icon name="create"></ion-icon>
+                Editar
+              </ion-button>
+              <ion-button class="delete-btn" (click)="showDeleteConfirm(i)">
+                <ion-icon name="trash"></ion-icon>
+                Eliminar
+              </ion-button>
+            </div>
+          </ion-card>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Formulario de Edición -->
+    <ion-card *ngIf="editingUser" class="edit-form-card">
+      <ion-card-header>
+        <ion-card-title class="section-title">
+          <ion-icon name="create"></ion-icon>
+          Editar Usuario
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form #editForm="ngForm" class="form-container">
+          <ion-item class="form-item">
+            <ion-label position="floating">Nombre Completo</ion-label>
+            <ion-input [(ngModel)]="editingUser.fullName" name="fullName" required></ion-input>
+          </ion-item>
+
+          <ion-item class="form-item">
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input [(ngModel)]="editingUser.email" name="email" type="email" required></ion-input>
+          </ion-item>
+
+          <ion-item class="form-item">
+            <ion-label position="floating">Nueva Contraseña (opcional)</ion-label>
+            <ion-input [(ngModel)]="editingUser.password" name="password" type="password"></ion-input>
+          </ion-item>
+
+          <div class="form-buttons">
+            <ion-button class="save-btn" (click)="saveUser()" [disabled]="!editForm.valid">
+              <ion-icon name="checkmark"></ion-icon>
+              Guardar
+            </ion-button>
+            <ion-button class="cancel-btn" (click)="cancelEdit()">
+              <ion-icon name="close"></ion-icon>
+              Cancelar
+            </ion-button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Formulario Nuevo Usuario -->
+    <ion-card class="new-user-card">
+      <ion-card-header>
+        <ion-card-title class="section-title">
+          <ion-icon name="person-add"></ion-icon>
+          Agregar Nuevo Usuario
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form #newUserForm="ngForm" class="form-container">
+          <ion-item class="form-item">
+            <ion-label position="floating">Nombre Completo</ion-label>
+            <ion-input [(ngModel)]="newUser.fullName" name="fullName" required></ion-input>
+          </ion-item>
+
+          <ion-item class="form-item">
+            <ion-label position="floating">Correo Electrónico</ion-label>
+            <ion-input [(ngModel)]="newUser.email" name="email" type="email" required></ion-input>
+          </ion-item>
+
+          <ion-item class="form-item">
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input [(ngModel)]="newUser.password" name="password" type="password" required></ion-input>
+          </ion-item>
+
+          <ion-button class="add-btn" expand="block" (click)="addUser()" [disabled]="!newUserForm.valid">
+            <ion-icon name="add-circle"></ion-icon>
+            Agregar Usuario
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

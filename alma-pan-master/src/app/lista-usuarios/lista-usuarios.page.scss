@@ -1,0 +1,174 @@
+:host {
+    --ion-color-primary: #4a90e2;
+    --ion-color-secondary: #50e3c2;
+    --ion-color-danger: #ff5f5f;
+    --ion-color-warning: #ffd740;
+    --ion-color-success: #32db64;
+  }
+  
+  .custom-toolbar {
+    --background: var(--ion-color-primary);
+    --color: white;
+  
+    ion-title {
+      font-weight: 600;
+    }
+  }
+  
+  .back-button {
+    --color: white;
+    font-weight: 500;
+  
+    ion-icon {
+      margin-right: 5px;
+    }
+  }
+  
+  .main-container {
+    padding: 16px;
+    background: #f5f5f5;
+  }
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    color: var(--ion-color-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+  
+    ion-icon {
+      margin-right: 8px;
+      font-size: 1.4rem;
+    }
+  }
+  
+  // Estilos para la lista de usuarios
+  .users-list-card {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    padding: 8px;
+  }
+  
+  .user-card {
+    padding: 16px;
+    border-radius: 10px;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+  
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+  
+    .user-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+  
+    .user-avatar {
+      ion-icon {
+        font-size: 3rem;
+        color: var(--ion-color-primary);
+      }
+    }
+  
+    .user-details {
+      margin-left: 16px;
+  
+      h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+      }
+  
+      p {
+        margin: 4px 0;
+        color: #666;
+        display: flex;
+        align-items: center;
+  
+        ion-icon {
+          margin-right: 6px;
+          font-size: 1rem;
+        }
+      }
+    }
+  
+    .user-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+  }
+  
+  // Estilos para los formularios
+  .form-container {
+    padding: 16px;
+  }
+  
+  .form-item {
+    --background: transparent;
+    --border-color: #ddd;
+    --border-radius: 8px;
+    --border-width: 1px;
+    margin-bottom: 16px;
+  
+    &.item-has-focus {
+      --border-color: var(--ion-color-primary);
+    }
+  }
+  
+  .form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  // Estilos para los botones
+  .edit-btn {
+    --background: var(--ion-color-warning);
+    --color: #fff;
+  }
+  
+  .delete-btn {
+    --background: var(--ion-color-danger);
+    --color: #fff;
+  }
+  
+  .save-btn {
+    --background: var(--ion-color-success);
+    --color: #fff;
+  }
+  
+  .cancel-btn {
+    --background: #999;
+    --color: #fff;
+  }
+  
+  .add-btn {
+    --background: var(--ion-color-primary);
+    margin-top: 20px;
+    
+    ion-icon {
+      margin-right: 8px;
+    }
+  }
+  
+  // Animaciones
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .edit-form-card, .new-user-card {
+    animation: fadeIn 0.3s ease-out;
+  }

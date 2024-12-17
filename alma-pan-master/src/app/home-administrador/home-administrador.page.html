@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: #ff0000;">
+    <ion-title>
+      ALMAPAN Panadería y Pastelería - Administrador
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Cerrar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Menú Lateral -->
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar style="--background: #ff0000;">
+      <ion-title>Menú Administrador</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!-- Navegación a Productos con parámetro de origen -->
+      <ion-item [routerLink]="['/products']" [queryParams]="{ origin: 'home-administrador' }">
+        <ion-icon name="cube" slot="start"></ion-icon>
+        Productos
+      </ion-item>
+
+      <!-- Navegación a Lista de Usuarios -->
+      <ion-item routerLink="/lista-usuarios">
+        <ion-icon name="person-add" slot="start"></ion-icon>
+        Lista de Usuarios
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Contenido Principal -->
+<ion-content [fullscreen]="true" class="alma-pan-background" id="main-content">
+  <ion-header collapse="condense">
+    <ion-toolbar style="--background: #ff0000;">
+      <ion-title size="large">Panel del Administrador</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container" class="responsive-container">
+    <h1>Bienvenido Administrador</h1>
+    <p>
+      Administra productos y usuarios desde este panel de control.
+    </p>
+    <ion-button expand="block" routerLink="/products" color="danger" [queryParams]="{ origin: 'home-administrador' }">
+      Ver Productos
+    </ion-button>
+
+    <ion-button expand="block" routerLink="/lista-usuarios" color="primary">
+      Gestionar Usuarios
+    </ion-button>
+  </div>
+</ion-content>

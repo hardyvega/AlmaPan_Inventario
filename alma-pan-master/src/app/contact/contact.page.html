@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar style="--background: #ff0000; color: white;">
+    <ion-title>
+      <a href="/home" style="color: white; text-decoration: none;">ALMAPAN Panadería y Pastelería</a>
+    </ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón para volver al Home -->
+      <ion-button routerLink="/home" color="light">Volver al Home</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form (ngSubmit)="saveContact()" class="contact-form">
+    <ion-item>
+      <ion-label position="floating">Nombre del Cliente</ion-label>
+      <ion-input [(ngModel)]="newContact.name" name="name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre del Negocio</ion-label>
+      <ion-input [(ngModel)]="newContact.businessName" name="businessName" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Número de Teléfono</ion-label>
+      <ion-input type="tel" [(ngModel)]="newContact.phone" name="phone" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Kilos de Pan Diarios</ion-label>
+      <ion-input type="number" [(ngModel)]="newContact.kilos" name="kilos" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Ubicación del Negocio</ion-label>
+      <ion-input [(ngModel)]="newContact.location" name="location" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Detalles de Entrega</ion-label>
+      <ion-textarea [(ngModel)]="newContact.details" name="details" required></ion-textarea>
+    </ion-item>
+    <ion-button expand="block" type="submit" color="danger">Guardar Contacto</ion-button>
+
+    <!-- Mensajes de éxito -->
+    <ion-text *ngIf="message" color="{{messageColor}}">{{message}}</ion-text>
+  </form>
+</ion-content>
